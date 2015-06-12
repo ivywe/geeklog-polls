@@ -515,6 +515,7 @@ function POLLS_pollVote($pid, $showall = true, $displaytype = 0, $order = '', $m
                 }
 
                 for ($j = 0; $j < $nquestions; $j++) {
+					$poll->set_var('question_id', $j);
                     $Q = DB_fetchArray($questions);
                     $poll->set_var('poll_question', $Q['question']);
                     $poll->set_var('question_id', $j);
